@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <DefineConstants>FABLE_COMPILER</DefineConstants>
+    </PropertyGroup>
+    <ItemGroup>
+      <EmbeddedResource Remove="UserManagement\**" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="index.html" />
+        <None Include="paket.references" />
+        <Compile Include="Version.fs" />
+        <Compile Include="..\Shared\Shared.fs" />
+        <Compile Include="AuxFunctions.fs" />
+        <Compile Include="Helper.fs" />
+        <Compile Include="UserAccount\UserAccount.fs" />
+        <Compile Include="UserList\UserList.fs" />
+        <Compile Include="Url-Template\Home.fs" />
+        <Compile Include="Url-Template\Counter.fs" />
+        <Compile Include="Types.fs" />
+        <Compile Include="State.fs" />
+        <Compile Include="View\NavbarLogin.fs" />
+        <Compile Include="View\SidebarMenu.fs" />
+        <Compile Include="View\View.fs" />
+        <Compile Include="App.fs" />
+    </ItemGroup>
+    <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>
