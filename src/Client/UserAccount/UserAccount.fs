@@ -53,7 +53,6 @@ module Server =
         |> Remoting.withRouteBuilder ServerPath.normalizeRoutes
         |> Remoting.buildProxy<IAdminSecureApi>
 
-
 // defines the initial state and initial command (= side-effect) of the application
 let init (role,id) : Model * Cmd<Msg> =
     let initialModel = {
@@ -193,7 +192,7 @@ let userElement model dispatch (user:User) =
         userAccountinformationColumn "Name" user.Username (fun _ -> dispatch (UpdateMainExtraElement (extraElementUserName model)))
     let emailColumn =
         userAccountinformationColumn "E-Mail" user.Email (fun _ -> dispatch (UpdateMainExtraElement (extraElementEmail model)))
-            
+
     [
         userNameColumn
         emailColumn
@@ -264,7 +263,7 @@ let extUserElement model dispatch (user:User) =
                 Heading.h6 [Heading.IsSubtitle][str user.UniqueId]
             ]
         ]
-        dangerZone model dispatch user 
+        dangerZone model dispatch user
     ]
 
 let userAccountElement model (dispatch : Msg -> unit) =

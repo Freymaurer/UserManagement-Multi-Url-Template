@@ -161,4 +161,3 @@ module Server =
         Remoting.createApi()
         |> Remoting.withRouteBuilder ServerPath.normalizeRoutes
         |> Remoting.buildProxy<IAdminSecureApi>
-

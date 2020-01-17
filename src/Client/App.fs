@@ -67,22 +67,20 @@ let view (model:Model) (dispatch: Msg -> unit) =
                 yield str (sprintf "you just matched the Detail Route with id: %i" id)
             | _ ->
                 yield str "this does not exist yet"
-        ]  
+        ]
         Hero.foot [] [
             Content.content [
                 Content.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered) ]
                 Content.Props [Style [ MarginTop "1rem" ] ]
             ] [ safeComponents ]
-        ] 
+        ]
     ]
-
 
 open Elmish.React
 open Elmish.Debug
 open Elmish.Navigation
 open Elmish.UrlParser
 open Elmish.Navigation
-
 
 let navigable = Program.toNavigable Routing.parsePath urlUpdate
 

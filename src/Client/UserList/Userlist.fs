@@ -25,7 +25,6 @@ type Model = {
     AdminViewUser : User option
     }
 
-
 // The Msg type defines what events/actions can occur while the application is running
 // the state of the application changes *only* in reaction to these events
 and Msg =
@@ -83,7 +82,6 @@ let init _ =
     let getUserListReq =
         Cmd.ofMsg Msg.AdminGetAllUsersRequest
     initialModel, Cmd.batch [getUserListReq]
-
 
 // The update function computes the next state of the application based on the current state and the incoming events/messages
 // It can also run side-effects (encoded as commands) like calling the server via Http.

@@ -47,7 +47,7 @@ let urlUpdate (route: Route option) (model:Model) =
                 Debug = Some ( sprintf "you just connected to detail number %i" id )
             }, logInCmd
     | None ->
-        printfn "No Route found! Route: %A" route 
+        printfn "No Route found! Route: %A" route
         model, Cmd.ofMsg (Navigate Route.Home)
     | _ ->
         { model with CurrentRoute = route }, Cmd.none
@@ -77,7 +77,6 @@ let init _ =
     }
     let route = Routing.parsePath Browser.Dom.document.location
     urlUpdate route initialModel
-
 
 // The update function computes the next state of the application based on the current state and the incoming events/messages
 // It can also run side-effects (encoded as commands) like calling the server via Http.
@@ -146,7 +145,7 @@ let update (msg : Msg) (currentModel : Model) : Model * Cmd<Msg> =
                 AdminViewUser = Some user
         }
         nextModel, aggregateMsgs
-        
+
     | UserListMsg msg, UserListModel m ->
         let mNew, cmd =
             UserList.update msg m
@@ -397,7 +396,7 @@ let update (msg : Msg) (currentModel : Model) : Model * Cmd<Msg> =
     | DotnetLogOutResponse (Ok value), _ ->
         let cmd =
             Cmd.ofMsg (Navigate Route.Home)
-            
+
         let initModel,cmd' = init()
         let nextModel =
             {initModel with ErrorMsg = Some (string value)}

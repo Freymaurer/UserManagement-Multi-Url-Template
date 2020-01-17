@@ -67,4 +67,3 @@ type Props = {
 
 let view = elmishView "Home" <| fun { Model = model; Dispatch = dispatch } ->
     welcomeElement model dispatch
-        

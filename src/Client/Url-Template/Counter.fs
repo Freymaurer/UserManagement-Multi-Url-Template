@@ -12,7 +12,6 @@ open Shared
 open Client.AuxFunctions
 open Client.View
 
-
 type ExtraReactElement =
 |EmptyElement
 |Message of string

@@ -6,7 +6,6 @@ open Fable.Core
 
 open Shared
 
-
 /// collection of discrete union types to load extra react element from the UserAccount subpage into the mainmodel.
 module UserAccountAux =
 

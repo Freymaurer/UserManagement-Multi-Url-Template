@@ -149,4 +149,3 @@ module AuxFunctions =
         | "UserManager" -> userManagerLevel
         | "User" -> userLevel
         | _ -> 0
-

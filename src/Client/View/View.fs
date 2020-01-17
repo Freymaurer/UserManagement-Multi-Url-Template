@@ -17,13 +17,12 @@ open Client.View.Helper
 open Client.Types
 open Client.State
 
-
 let addUsernameToExtLoginModal model dispatch =
     Modal.modal [
         Modal.IsActive true
         Modal.Props  [
             if model.RegisterModel.Username = "" then
-                yield (onEnter (AddUsernameToExtLogin model.RegisterModel.Username) dispatch) 
+                yield (onEnter (AddUsernameToExtLogin model.RegisterModel.Username) dispatch)
             else yield Style []
         ]
     ] [
@@ -227,7 +226,6 @@ module VerifyLoginModalInputElements =
         | InputRoleAdmin -> inputRoleAdmin
         | DeleteAccountText -> strReactElement "Delete your account"
         | AdminDeleteAccountText -> strReactElement "You are about to delete a user account. Please verify your login."
-
 
 let verifyLoginModal (model : Model) (extraElement: (Model -> (Msg -> unit) -> ReactElement)) (dispatch : Msg -> unit) msgInput =
     let extUser = model.User.Value.ExtLogin.IsTrue

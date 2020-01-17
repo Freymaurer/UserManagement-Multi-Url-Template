@@ -36,7 +36,7 @@ let checkAccountOrigin (ctx: HttpContext) =
     then LoginMethods.LocalAuthority
     else
         ctx.User.Claims
-        |> Seq.map (fun c -> printfn "%s" c.Issuer; c.Issuer) 
+        |> Seq.map (fun c -> printfn "%s" c.Issuer; c.Issuer)
         |> Seq.filter (fun x -> x <> LoginMethods.LocalAuthority)
         |> Seq.groupBy (fun x -> x)
         |> fun x -> if Seq.length x > 1 then failwith "Unknown Claims issuer!" else x |> (Seq.head >> fst)
@@ -259,7 +259,7 @@ let dotnetGetUserById userId (context: HttpContext) =
     if context.User.HasClaim (ClaimTypes.NameIdentifier, userId)
     then
         taskFunc
-    else 
+    else
         if context.User.HasClaim (ClaimTypes.Role,"Developer") || context.User.HasClaim (ClaimTypes.Role,"Admin") || context.User.HasClaim (ClaimTypes.Role,"UserManager")
         then taskFunc
         else ViewUserFail "Incorrect authentification to view the requested user."
