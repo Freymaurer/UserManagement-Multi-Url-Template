@@ -1,5 +1,5 @@
-module Client.State
 
+module Client.State
 open System
 
 open Elmish

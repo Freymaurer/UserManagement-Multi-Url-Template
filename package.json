@@ -30,8 +30,5 @@
         "webpack-cli": "^3.3.9",
         "webpack-dev-server": "^3.8.2",
         "whatwg-fetch": "^3.0.0"
-    },
-    "dependencies": {
-        "serialize-javascript": "2.1.1"
     }
 }
